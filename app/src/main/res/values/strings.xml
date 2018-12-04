@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">EMA</string>
+    <string name="action_settings">Settings</string>
+
+    <!--HINTS-->
+                      <!--Event-->
+    <string name="hint_event_name">Event Name</string>
+    <string name="hint_event_place">Event Place</string>
+    <string name="hint_event_date">Event Date</string>
+    <string name="hint_event_budget">Event Budget</string>
+                      <!--Mission-->
+    <string name="hint_mission_name">Mission name</string>
+    <string name="hint_mission_place">Mission place</string>
+    <string name="hint_mission_start_date">Mission start date</string>
+    <string name="hint_mission_end_date">Mission end date</string>
+    <string name="hint_mission_description">Mission description</string>
+                       <!--Contact-->
+    <string name="hint_contact_first_name">Contact first name</string>
+    <string name="hint_contact_last_name">Contact last name</string>
+    <string name="hint_contact_phone">Contact phone</string>
+    <string name="hint_contact_email">Contact email</string>
+    <!--HINTS-->
+
+    <!--Errors-->
+    <string name="empty_not_saved">Event not saved because it is empty.</string>
+    <string name="wrong_date_not_saved">Wrong date format, save failure.</string>
+    <!--Errors-->
+
+
+    <string name="button_save">Save</string>
+    <string name="edit_button_text">Edit</string>
+    <string name="delete_button_text">Delete</string>
+    <string name="event_details">Show Details</string>
+    <string name="todo">TODO</string>
+    <string name="mission_activity_name">Missions</string>
+    <string name="event_activity_name">Events</string>
+
+    <array name="event_details_array">
+        <item>"Missions"</item>
+        <item>"Contacts"</item>
+    </array>
+
+    <!--MENU ITEMS-->
+    <string name="menu_item_events">All Events</string>
+    <string name="menu_item_contacts">All Contacts</string>
+    <string name="menu_item_missions">All Missions</string>
+    <string name="menu_item_show_contacts">Show event contacts </string>
+    <string name="menu_item_show_missions">Show event missions</string>
+    <string name="menu_item_show_events">Show contact Events</string>
+    <string name="menu_item_edit">Edit</string>
+    <string name="menu_item_delete">Delete</string>
+    <!--MENU ITEMS-->
+
+    <string name="event_no_data">No Event</string>
+    <string name="mission_no_data">No Mission</string>
+    <string name="title_activity_contact_start">Contacts</string>
+</resources>

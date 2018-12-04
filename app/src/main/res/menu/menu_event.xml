@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tool"
+    tools:context="com.ema.activity.EventActivity">
+
+    <item
+        app:showAsAction="never"
+        android:id="@+id/eventMenuShowContacts"
+        android:title="@string/menu_item_show_contacts" />
+    <item
+        app:showAsAction="never"
+        android:id="@+id/eventMenuShowMissions"
+        android:title="@string/menu_item_show_missions" />
+    <item
+        app:showAsAction="never"
+        android:id="@+id/eventMenuItemEdit"
+        android:title="@string/menu_item_edit" />
+    <item
+        app:showAsAction="never"
+        android:id="@+id/eventMenuItemDelete"
+        android:title="@string/menu_item_delete"/>
+
+</menu>

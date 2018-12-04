@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.ema.activity.ContactActivityStart">
+
+    <item
+        app:showAsAction="never"
+        android:id="@+id/contactMenuShowEvents"
+        android:title="@string/menu_item_show_events" />
+    <item
+        app:showAsAction="never"
+        android:id="@+id/contactMenuItemEdit"
+        android:title="@string/menu_item_edit" />
+    <item
+        app:showAsAction="never"
+        android:id="@+id/contactMenuItemDelete"
+        android:title="@string/menu_item_delete"/>
+</menu>
