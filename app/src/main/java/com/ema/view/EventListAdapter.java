@@ -103,7 +103,8 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
                                     bundle.putString("eventName", holder.textViewEventName.getText().toString());
                                     bundle.putString("eventPlace", holder.textViewEventPlace.getText().toString());
                                     bundle.putString("eventDate", holder.textViewEventDate.getText().toString());
-                                    bundle.putInt("eventBudget", Integer.valueOf(holder.textViewEventBudget.getText().toString()));
+                                    if (!holder.textViewEventBudget.getText().toString().isEmpty())
+                                        bundle.putInt("eventBudget", Integer.valueOf(holder.textViewEventBudget.getText().toString()));
                                     bundle.putLong("eventId", current.getId());
                                     Intent intent = new Intent(v.getContext(), EventActivity.class);
                                     intent.putExtra("eventDataForUpdate", bundle);
