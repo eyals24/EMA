@@ -54,4 +54,20 @@
     <string name="event_no_data">No Event</string>
     <string name="mission_no_data">No Mission</string>
     <string name="title_activity_contact_start">Contacts</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="login_email_invalid">enter a valid email address</string>
+    <string name="login_password_invalid">at least 6 alphanumeric characters</string>
+
+    <string name="desc_firebase_lockup">Firebase logo and name</string>
+    <string name="emailpassword_title_text">Email and Password</string>
+    <string name="signed_out">Signed Out</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="create_account">Create Account</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="verify_email">Verify Email</string>
+    <string name="back">Go Back</string>
+    <string name="go_to_events_button">Go To Events</string>
+    <string name="go_to_contacts_button">Go To Contacts</string>
 </resources>

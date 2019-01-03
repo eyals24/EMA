@@ -16,7 +16,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.ema.MainActivity;
 import com.ema.R;
 import com.ema.db.entity.Mission;
 import com.ema.view.MissionListAdapter;
@@ -94,7 +93,7 @@ public class MissionActivityStart extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_events: {
                 Intent intent = new Intent(MissionActivityStart.this,
-                        MainActivity.class);
+                        EventActivityStart.class);
                 startActivity(intent);
                 break;
             }

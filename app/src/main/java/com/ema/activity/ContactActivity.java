@@ -1,18 +1,26 @@
 package com.ema.activity;
 
+import android.Manifest;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
-import com.ema.R.*;
+import com.ema.R;
+import com.ema.R.id;
+import com.ema.R.layout;
 
 public class ContactActivity extends AppCompatActivity {
 
     public static final String EXTRA_REPLY = "com.example.android.contactlistsql.REPLY";
+    public static int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 100;
 
     private EditText contactFirstName, contactLastName, contactPhone, contactEmail;
     private Long contactId, eventId;
@@ -26,6 +34,45 @@ public class ContactActivity extends AppCompatActivity {
         contactLastName = findViewById(id.edit_contact_last_name);
         contactPhone = findViewById(id.edit_contact_phone);
         contactEmail = findViewById(id.edit_contact_email);
+
+        contactFirstName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Here, thisActivity is the current activity
+                if (ContextCompat.checkSelfPermission(view.getContext(),
+                        Manifest.permission.READ_CONTACTS)
+                        != PackageManager.PERMISSION_GRANTED) {
+
+                    // Permission is not granted
+                    // Should we show an explanation?
+                    if (ActivityCompat.shouldShowRequestPermissionRationale(ContactActivity.this,
+                            Manifest.permission.READ_CONTACTS)) {
+                        // Show an explanation to the user *asynchronously* -- don't block
+                        // this thread waiting for the user's response! After the user
+                        // sees the explanation, try again to request the permission.
+                        Toast.makeText(
+                                getApplicationContext(),
+                                R.string.wrong_date_not_saved,
+                                Toast.LENGTH_LONG).show();
+                    } else {
+                        // No explanation needed; request the permission
+                        ActivityCompat.requestPermissions(ContactActivity.this,
+                                new String[]{Manifest.permission.READ_CONTACTS},
+                                MY_PERMISSIONS_REQUEST_READ_CONTACTS);
+
+                        // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+                        // app-defined int constant. The callback method gets the
+                        // result of the request.
+                    }
+                } else {
+                    // Permission has already been granted
+                    Intent intent = new Intent(ContactActivity.this,
+                            PhoneContactActivityStart.class);
+                    startActivity(intent);
+                }
+
+            }
+        });
 
         Intent intent = getIntent();
         Bundle bundle = intent.getBundleExtra("contactDataForUpdate");

@@ -16,10 +16,11 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
-
-import com.ema.MainActivity;
-import com.ema.R.*;
+import com.ema.R.id;
+import com.ema.R.layout;
+import com.ema.R.menu;
 import com.ema.activity.ContactActivity;
+import com.ema.activity.EventActivityStart;
 import com.ema.db.entity.Contact;
 import com.ema.viewmodel.ContactViewModel;
 
@@ -108,7 +109,7 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
                                 }
                                 case id.contactMenuShowEvents: {
                                     Intent intent = new Intent(v.getContext(),
-                                            MainActivity.class);
+                                            EventActivityStart.class);
                                     intent.putExtra("contactId", current.getId());
                                     v.getContext().startActivity(intent);
                                     break;

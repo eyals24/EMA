@@ -14,7 +14,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.ema.MainActivity;
 import com.ema.R;
 import com.ema.db.entity.Contact;
 import com.ema.db.entity.EventJoinContact;
@@ -95,7 +94,7 @@ public class ContactActivityStart extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_events: {
                 Intent intent = new Intent(ContactActivityStart.this,
-                        MainActivity.class);
+                        EventActivityStart.class);
                 startActivity(intent);
                 break;
             }

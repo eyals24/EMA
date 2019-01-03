@@ -76,4 +76,11 @@
         android:text="@string/button_save"
         android:textColor="@color/buttonLabel" />
 
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:divider="@null"
+        />
+
 </LinearLayout>

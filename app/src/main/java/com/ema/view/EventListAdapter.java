@@ -29,7 +29,7 @@ import com.ema.viewmodel.EventViewModel;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-import static com.ema.MainActivity.NEW_EVENT_ACTIVITY_REQUEST_CODE;
+import static com.ema.activity.EventActivityStart.NEW_EVENT_ACTIVITY_REQUEST_CODE;
 import static java.util.Locale.ROOT;
 
 public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.EventViewHolder> {
@@ -77,6 +77,9 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
             if (current.getEventPlace() != null && !current.getEventPlace().isEmpty()) {
                 holder.textViewEventPlace.setText(current.getEventPlace());
             }
+            if (current.getEventBudget() > 0) {
+                holder.textViewEventBudget.setText(String.valueOf(current.getEventBudget()));
+            }
             if (current.getEventDate() != null) {
                 SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm", ROOT);
                 holder.textViewEventDate.setText(format.format(current.getEventDate()));
@@ -100,6 +103,7 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
                                     bundle.putString("eventName", holder.textViewEventName.getText().toString());
                                     bundle.putString("eventPlace", holder.textViewEventPlace.getText().toString());
                                     bundle.putString("eventDate", holder.textViewEventDate.getText().toString());
+                                    bundle.putInt("eventBudget", Integer.valueOf(holder.textViewEventBudget.getText().toString()));
                                     bundle.putLong("eventId", current.getId());
                                     Intent intent = new Intent(v.getContext(), EventActivity.class);
                                     intent.putExtra("eventDataForUpdate", bundle);
