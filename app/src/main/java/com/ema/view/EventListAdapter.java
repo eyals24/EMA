@@ -73,18 +73,12 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
         if (events != null) {
             final Event current = events.get(position);
             holder.textViewEventName.setText(current.getEventName());
-
-            if (current.getEventPlace() != null && !current.getEventPlace().isEmpty()) {
-                holder.textViewEventPlace.setText(current.getEventPlace());
-            }
-            if (current.getEventBudget() > 0) {
-                holder.textViewEventBudget.setText(String.valueOf(current.getEventBudget()));
-            }
+            holder.textViewEventPlace.setText(current.getEventPlace());
+            holder.textViewEventBudget.setText(String.valueOf(current.getEventBudget()));
             if (current.getEventDate() != null) {
                 SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm", ROOT);
                 holder.textViewEventDate.setText(format.format(current.getEventDate()));
             }
-
             holder.imageViewEventMenu.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(final View v) {

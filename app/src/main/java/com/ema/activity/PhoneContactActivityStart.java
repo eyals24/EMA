@@ -57,6 +57,7 @@ public class PhoneContactActivityStart extends AppCompatActivity {
             String id = cursor
                     .getString(cursor.getColumnIndex(ContactsContract.Contacts._ID));
 
+            contactModel.setId(id);
             // projection
             String[] projection = new String[]{
                     ContactsContract

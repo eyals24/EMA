@@ -16,6 +16,10 @@ import android.widget.Toast;
 import com.ema.R;
 import com.ema.R.id;
 import com.ema.R.layout;
+import com.ema.model.ContactModel;
+import com.ema.view.PhoneContactListAdapter;
+
+import static com.ema.activity.ContactActivityStart.CONTACT_ACTIVITY_REQUEST_CODE;
 
 public class ContactActivity extends AppCompatActivity {
 
@@ -68,7 +72,7 @@ public class ContactActivity extends AppCompatActivity {
                     // Permission has already been granted
                     Intent intent = new Intent(ContactActivity.this,
                             PhoneContactActivityStart.class);
-                    startActivity(intent);
+                    startActivityForResult(intent, CONTACT_ACTIVITY_REQUEST_CODE);
                 }
 
             }
@@ -108,5 +112,21 @@ public class ContactActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == CONTACT_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
+            Bundle bundle = data.getBundleExtra(PhoneContactListAdapter.EXTRA_REPLY);
+            ContactModel contact = (ContactModel) bundle.getSerializable("phoneContact");
+            if (contact != null) {
+                contactFirstName.setText(contact.getFirstName());
+                contactLastName.setText(contact.getLastName());
+                contactPhone.setText(contact.getNumber());
+                contactEmail.setText(contact.getEmail());
+            }
+        }
     }
 }

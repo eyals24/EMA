@@ -71,16 +71,9 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
         if (contacts != null) {
             final Contact current = contacts.get(position);
             holder.textViewContactFirstName.setText(current.getContactFirstName());
-
-            if (current.getContactLastName() != null && !current.getContactLastName().isEmpty())
-                holder.textViewContactLastName.setText(current.getContactLastName());
-
-            if (current.getContactPhone() != null && !current.getContactPhone().isEmpty())
-                holder.textViewContactPhone.setText(current.getContactPhone());
-
-            if (current.getContactEmail() != null && !current.getContactEmail().isEmpty())
-                holder.textViewContactEmail.setText(current.getContactEmail());
-
+            holder.textViewContactLastName.setText(current.getContactLastName());
+            holder.textViewContactPhone.setText(current.getContactPhone());
+            holder.textViewContactEmail.setText(current.getContactEmail());
             holder.imageViewContactMenu.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(final View v) {

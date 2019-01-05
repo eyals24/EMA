@@ -69,15 +69,8 @@ public class MissionListAdapter extends RecyclerView.Adapter<MissionListAdapter.
         if (missions != null) {
             final Mission current = missions.get(position);
             holder.textViewMissionName.setText(current.getMissionName());
-
-            if (current.getMissionPlace() != null && !current.getMissionPlace().isEmpty()) {
-                holder.textViewMissionPlace.setText(current.getMissionPlace());
-            }
-
-            if (current.getMissionDescription() != null && !current.getMissionDescription().isEmpty()) {
-                holder.textViewMissionDescription.setText(current.getMissionDescription());
-            }
-
+            holder.textViewMissionPlace.setText(current.getMissionPlace());
+            holder.textViewMissionDescription.setText(current.getMissionDescription());
             SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm", ROOT);
             if (current.getMissionStartDate() != null)
                 holder.textViewMissionStartDate.setText(format.format(current.getMissionStartDate()));
